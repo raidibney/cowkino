@@ -254,7 +254,7 @@ For support, questions, or inquiries:
 </p>
 
 <p align="center">
-  <b>Cow Kino</b> was developed by <a href="https://github.com/Zihan231">Zihan231</a> with ❤️
+  <b>Cow Kino</b> was developed by <a href="https://github.com/raidibney">Raid Ibney Hasan</a> with ❤️
 </p>
 
 <p align="center">
