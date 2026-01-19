@@ -14,7 +14,7 @@ if (session_status() == PHP_SESSION_NONE) {
       rel="stylesheet"
     />
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <link rel="stylesheet" href="./Asset/style/style.css" />
+    <link rel="stylesheet" href="./Asset/style/style.css?v2.1" />
   </head>
   <body>
     <header class="navbar" id="navbar">
