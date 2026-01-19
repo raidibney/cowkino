@@ -1,23 +1,20 @@
 <?php
 require_once __DIR__ . '/DataBase.php';
 // Create User Function
-function InsertUser($fullName, $pass, $email, $phone)
+function InsertUser($fullName, $pass, $email, $phone, $user_type)
 {
     global $conn;
 
-    // 1. Check if email already exists
-    // We run a select query to count rows with this email
     $checkQuery = "SELECT * FROM users WHERE email = '$email'";
     $checkResult = mysqli_query($conn, $checkQuery);
 
-    // If we find any row, it means email exists
     if (mysqli_num_rows($checkResult) > 0) {
         return "email_exists"; 
     }
 
-    // 2. If email does NOT exist, proceed to Insert
-    $query = "INSERT INTO users (name, email, password, phone) 
-              VALUES ('$fullName', '$email', '$pass', '$phone')";
+    // ✅ user_type inserted
+    $query = "INSERT INTO users (name, email, password, phone, user_type) 
+              VALUES ('$fullName', '$email', '$pass', '$phone', '$user_type')";
 
     $result = mysqli_query($conn, $query);
 
@@ -27,6 +24,7 @@ function InsertUser($fullName, $pass, $email, $phone)
         return false;
     }
 }
+
 
 // --- Login Function ---
 function Login($email, $pass)

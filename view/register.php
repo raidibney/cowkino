@@ -17,9 +17,7 @@ if (session_status() == PHP_SESSION_NONE) {
 </head>
 <body>
 
-    <?php
-    include "./header.php";
-    ?>
+    <?php include "./header.php"; ?>
 
     <main class="login-section">
         <div class="login-container">
@@ -50,10 +48,8 @@ if (session_status() == PHP_SESSION_NONE) {
                             ?>
                         </div>
                     <?php endif; ?>
-                    <form id="registerForm"
-                    method="POST"
-                    action="../controller/createUserController.php"
-                    >
+
+                    <form id="registerForm" method="POST" action="../controller/createUserController.php">
                         
                         <div class="input-group">
                             <label for="fullname">Full Name</label>
@@ -76,6 +72,20 @@ if (session_status() == PHP_SESSION_NONE) {
                             <div class="input-field">
                                 <i class="ph ph-phone input-icon"></i>
                                 <input type="tel" id="phone" name="phone" placeholder="+880 1XXX XXXXXX" required>
+                            </div>
+                        </div>
+
+                       
+                        <div class="input-group">
+                            <label for="user_type">User Type</label>
+                            <div class="input-field">
+                                <i class="ph ph-identification-card input-icon"></i>
+                                <select id="user_type" name="user_type" required style="width:100%; border:none; outline:none; background:transparent;">
+                                    <option value="" disabled selected>Select user type</option>
+                                    <option value="buyer">Buyer</option>
+                                    <option value="seller">Seller</option>
+                                     <option value="admin">Admin</option>
+                                </select>
                             </div>
                         </div>
 
@@ -117,13 +127,11 @@ if (session_status() == PHP_SESSION_NONE) {
 
     <script src="../Asset/Js/script.js"></script>
     <script>
-        // Simple function to toggle password visibility for specific inputs
         function toggleOnePass(icon, inputId) {
             const input = document.getElementById(inputId);
             const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
             input.setAttribute('type', type);
-            
-            // Toggle Icon Class
+
             if(type === 'text') {
                 icon.classList.remove('ph-eye-slash');
                 icon.classList.add('ph-eye');

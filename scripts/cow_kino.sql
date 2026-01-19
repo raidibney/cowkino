@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 07, 2026 at 08:27 PM
+-- Generation Time: Jan 19, 2026 at 05:33 PM
 -- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- PHP Version: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -53,7 +53,8 @@ INSERT INTO `cows` (`name`, `id`, `price`, `breed`, `age`, `weight`, `photo_url`
 ('Spot', 10, 1300, 'Ayrshire', 3.8, 480, 'istockphoto-496397741-612x612.jpg', 'Hardy forager, does well in pasture-based systems. Reliable milk production.'),
 ('Rocky', 11, 2100, 'Charolais', 4.5, 880, 'istockphoto-1382389891-612x612.jpg', 'Large Charolais, excellent growth rate. Calm temperament and easy to handle.'),
 ('Gauri', 12, 1050, 'Gir', 2.8, 390, 'photo-1570042225831-d98fa7577f1e.jpg', 'Beautiful Gir cow with distinctive hump. highly adaptable and good milker.'),
-('Pagla Goru', 14, 1400, 'RedChittagong', 1.5, 850, 'COW_695eb3141973b0.73742884.jpg', 'Pagla goru khabo, yeah ki moja');
+('Pagla Goru', 14, 1400, 'RedChittagong', 1.5, 850, 'COW_695eb3141973b0.73742884.jpg', 'Pagla goru khabo, yeah ki moja'),
+('desi goru', 15, 230, 'RedChittagong', 6, 450, 'COW_696098be9f7949.80538060.jpg', 'valo goru');
 
 -- --------------------------------------------------------
 
@@ -66,15 +67,19 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `email` varchar(20) NOT NULL,
   `password` varchar(20) NOT NULL,
-  `phone` int(11) NOT NULL
+  `phone` int(11) NOT NULL,
+  `user_type` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`name`, `id`, `email`, `password`, `phone`) VALUES
-('Zihan', 5, 'zihan@gmail.com', 'Zihan@123', 1799246459);
+INSERT INTO `users` (`name`, `id`, `email`, `password`, `phone`, `user_type`) VALUES
+('Zihan', 5, 'zihan@gmail.com', 'Zihan@123', 1799246459, 'admin'),
+('raid ibney hasan', 6, 'raid@gmail.com', '1234', 1010101010, 'user'),
+('Demo', 7, 'demo@gmail.com', 'Zihan@123', 1799246459, 'seller'),
+('rahim', 8, 'rahim@gmail.com', 'rahim@123', 123456789, 'buyer');
 
 --
 -- Indexes for dumped tables
@@ -100,13 +105,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `cows`
 --
 ALTER TABLE `cows`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
