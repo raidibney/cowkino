@@ -15,6 +15,7 @@
             <div class="footer-nav">
                 <a href="#">Home</a>
                 <a href="#about">About Us</a>
+                <a href="./view/cow_delivery.php">Delivery</a>
                 <a href="#market">Marketplace</a>
                 <a href="#contact">Contact</a>
                 <a href="#">Privacy Policy</a>

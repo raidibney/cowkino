@@ -29,6 +29,7 @@ if (session_status() == PHP_SESSION_NONE) {
                 <li><a href="./index.php" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="./view/query.php" class="nav-link">Query</a></li>
                 
                 <li class="mobile-only">
                     <?php if (isset($_SESSION['status']) && $_SESSION['status'] === true): ?>
